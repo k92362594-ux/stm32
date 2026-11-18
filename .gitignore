@@ -1,0 +1,28 @@
+# Keil build outputs
+Objects/
+Listings/
+DebugConfig/
+Diagnostics/
+*.axf
+*.o
+*.crf
+*.d
+*.dep
+*.hex
+*.lst
+*.map
+*.lnp
+*.htm
+build.log
+
+# Keil user-specific settings
+*.uvoptx
+*.uvguix.*
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Windows metadata
+Thumbs.db
+Desktop.ini
