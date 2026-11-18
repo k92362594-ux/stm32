@@ -18,8 +18,8 @@ void Key_Init(void)          /* 配置两个按键输入，不返回数据 */
 /* 返回0/1/2。保留20ms消抖，不再用while等待松手。 */
 uint8_t Key_GetNum(void)
 {
-    uint8_t Key1;             /* 保存PA11电平：按下0，松开1 */
-    uint8_t Key2;             /* 保存PA12电平：按下0，松开1 */
+    uint8_t Key1;             /* 保存PA9电平：按下0，松开1 */
+    uint8_t Key2;             /* 保存PA10电平：按下0，松开1 */
 
     Key1 = GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_9);
     Key2 = GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_10);
