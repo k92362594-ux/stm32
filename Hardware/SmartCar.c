@@ -5,8 +5,15 @@ void SmartCar_Init(void)
 {
 	Motor_Init();
 }
+/* 与参考工程（2.自动避障）相同的接口，自由避障模式用它给出参考速度。 */
+void Car_SetSpeed(int8_t LeftSpeed, int8_t RightSpeed)
+{
+	LeftMotor_Speed(LeftSpeed);
+	RightMotor_Speed(RightSpeed);
+}
 void Move_Forward(void)
 {
+	/* 循迹直行速度，与参考循迹工程一致为30；自由避障用Car_SetSpeed不受影响 */
 	LeftMotor_Speed(30);
 	RightMotor_Speed(30);
 }

@@ -49,6 +49,9 @@ void PWM_Init(void)
 	TIM_OC2Init(TIM2,&TIM_OCInitStructure);
 	TIM_OC4Init(TIM3,&TIM_OCInitStructure);
 	
+	/* 上电先把舵机CH4设为1.5ms中位脉宽，避免使能后输出0脉宽导致舵机乱转 */
+	TIM_SetCompare4(TIM3,1500);
+	
 	//5.启动定时器
 	
 	TIM_Cmd(TIM2,ENABLE);
