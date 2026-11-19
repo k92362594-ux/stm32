@@ -1,6 +1,6 @@
-# SmartCar-KeyModes
+# KeyRover｜基于 STM32F103C8 的双模式智能小车
 
-基于 **STM32F103C8** 的双模式智能小车工程，使用 STM32F10x 标准外设库和 Keil MDK 开发。通过两个按键切换“循迹避障”和“自由避障”模式，OLED 实时显示当前模式及超声波测距信息。
+**KeyRover（键行）**是一套基于 **STM32F103C8** 的双模式智能小车工程，使用 STM32F10x 标准外设库和 Keil MDK 开发。通过两个按键切换“循迹避障”和“自由避障”模式，OLED 实时显示当前模式及超声波测距信息。
 
 ## 主要功能
 
@@ -112,7 +112,7 @@
 ## 目录结构
 
 ```text
-SmartCar-KeyModes/
+KeyRover/
 ├── Hardware/              # 按键、电机、PWM、OLED、超声波、舵机等驱动
 ├── Library/               # STM32F10x 标准外设库
 ├── Start/                 # CMSIS、启动文件和系统时钟配置
@@ -120,7 +120,6 @@ SmartCar-KeyModes/
 ├── User/                  # main.c、中断及库配置
 ├── Tests/                 # ARMCC 编译与 Cortex-M3 模拟测试脚本
 ├── Project.uvprojx        # Keil 工程文件
-├── 按键与模式讲解.md       # 补充学习说明
 └── README.md
 ```
 
@@ -138,8 +137,6 @@ powershell -ExecutionPolicy Bypass -File .\Tests\run_tests.ps1 -CompilerRoot "D:
 ```
 
 请按本机 Keil 安装路径修改 `CompilerRoot`。修改 GPIO 后还需同步测试中的硬件 mock；当前 `test_modes.c` 的按键 mock 仍使用 `GPIO_Pin_11` 映射，与当前 PA9/PA10 按键实现不一致，运行按键测试前应先校正。模拟测试不能验证真实电气连接、电机方向、舵机角度、制动距离或传感器安装效果。
-
-补充说明可参阅 `按键与模式讲解.md`；若其中引脚描述与当前源码不一致，以本 README 的引脚表和当前源码为准。
 
 ## 实车调试建议
 
